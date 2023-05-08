@@ -207,9 +207,9 @@ class App {
     constructor() {
         this._tracker = new CalorieTracker();
 
-        document.getElementById("meal-form").addEventListener("submit", this._newItem.bind(this, "meal"));
+        document.getElementById("meal-form").addEventListener("submit", this._addNewItem.bind(this, "meal"));
 
-        document.getElementById("workout-form").addEventListener("submit", this._newItem.bind(this, "workout"));
+        document.getElementById("workout-form").addEventListener("submit", this._addNewItem.bind(this, "workout"));
 
         document.getElementById("meal-items").addEventListener("click", this._removeItem.bind(this, "meal"));
 
@@ -224,7 +224,7 @@ class App {
         document.getElementById("limit-form").addEventListener("submit", this._setLimit.bind(this));
     }
 
-    _newItem(type, e) {
+    _addNewItem(type, e) {
         e.preventDefault();
 
         const name = document.getElementById(`${type}-name`);
